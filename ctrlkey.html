@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tecla CTRL</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <header>
+    <h1>CONTROL-E</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="esckey.html">Anterior</a></li>
+        <li><a href="altkey.html">Próximo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+      <div class="image">
+        <img src="ctrl_key.jfif" alt="Teclado com destaque para a tecla CTRL">
+      </div>
+      <div class="explanation">
+        <h2>A Tecla CTRL</h2>
+        <p>A tecla CTRL (Control) é usada em combinação com outras teclas para executar funções específicas em programas de computador. </p>
+		<p>Algumas combinações comuns de teclas com CTRL incluem:</p>
+			<p>		CTRL+C	: para copiar</p>
+			<p>		CTRL+V 	: para colar <p>
+			<p> 	CTRL+Z 	: para desfazer a última ação</p>
+			<p>Além disso, a tecla CTRL é frequentemente usada para acessar atalhos de teclado em programas e sistemas operacionais.</p>
+        <button id="ctrl-btn">Pressione Ctrl</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    const ctrlBtn = document.getElementById('ctrl-btn');
+    document.addEventListener('keydown', event => {
+      if (event.ctrlKey && event.code === 'KeyN') {
+        location.href = 'altkey.html';
+      } else if (event.ctrlKey) {
+        ctrlBtn.click();
+      }
+    });
+    ctrlBtn.addEventListener('click', () => {
+      location.href = 'altkey.html';
+    });
+  </script>
+</body>
+
+</html>

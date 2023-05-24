@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mouse 10</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20%;
+      }
+
+      #slider {
+        width: 50%;
+        margin: auto;
+      }
+
+      #slider input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 20px;
+        background-color: #ddd;
+        border-radius: 10px;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+      }
+
+      #slider input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      #instructions {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 60%;
+      }
+
+      #follow-button {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="instructions">
+      <p>Arraste o botão deslizante para a direita/esquerda para alterar as cores do fundo da tela.</p>
+    </div>
+
+    <div id="slider">
+      <input type="range" min="0" max="255" value="128" id="range" />
+    </div>
+
+    <button id="follow-button">Seguir em Frente</button>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const range = document.getElementById("range");
+      const button = document.getElementById("follow-button");
+
+      let counter = 0;
+      let isSliderEnabled = true;
+
+      function changeBackground() {
+        if (!isSliderEnabled) {
+          return;
+        }
+
+        const colorValue = range.value;
+        const bgColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+        document.body.style.backgroundColor = bgColor;
+
+        if (range.value == 0 || range.value == 255) {
+          counter++;
+        }
+
+        if (counter >= 5) {
+          isSliderEnabled = false;
+          slider.style.display = "none";
+          button.style.display = "block";
+        }
+      }
+
+      range.addEventListener("input", changeBackground);
+
+      button.addEventListener("click", function () {
+        window.location.href = "mouse9.html";
+      });
+    </script>
+  </body>
+</html>

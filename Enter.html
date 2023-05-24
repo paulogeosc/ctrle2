@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tecla Enter</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="estilo.css">
+	
+</head>
+
+<body>
+  <header>
+    <h1>CONTROL-E</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="teclado.html">Anterior</a></li>
+        <li><a href="tabkey.html">Próximo</a></li>       
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>A Tecla ENTER</h2>
+    <div class="content">
+      <div class="image">
+        <img src="enter_key.jfif" alt="Teclado com destaque para a tecla ENTER">
+      </div>
+      <div class="text">
+	     <textarea id="editor" rows="15" cols="80" readonly style="font-size: 18px;"></textarea>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    const text = "ENTER é usada para confirmar uma ação ou enviar informações. É como um botão de 'ok' ou 'enviar'. Quando você pressiona a tecla 'Enter', você está dizendo ao computador que está pronto para continuar / concluiu uma determinada tarefa.\n\nEla também pode ser usada para pular para a próxima linha e começar um novo parágrafo em um documento de texto.\n\nÉ importante que os usuários do teclado do PC saibam como utilizar corretamente a tecla Enter, já que ela é essencial em diversos programas e aplicações do computador. Através do uso adequado da tecla Enter, é possível garantir que as informações sejam inseridas e processadas corretamente, tornando o trabalho mais eficiente e produtivo.\n\nÉ uma tecla que você provavelmente usará muito ao usar um computador.";
+
+    let editor = document.getElementById("editor");
+    let paragraphs = text.split("\n\n");
+    let currentParagraphIndex = 0;
+    let currentCharIndex = 0;
+    let isPaused = false;
+
+    function writeText() {
+      if (currentCharIndex >= paragraphs[currentParagraphIndex].length) {
+        currentParagraphIndex++;
+        currentCharIndex = 0;
+        editor.value += "\n\n";
+        isPaused = true;
+        return;
+      }
+
+      editor.value += paragraphs[currentParagraphIndex][currentCharIndex];
+      currentCharIndex++;
+
+      setTimeout(writeText, 50);
+    }
+
+    writeText();
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        if (isPaused) {
+          isPaused = false;
+          setTimeout(writeText, 50);
+        } else {
+          editor.value += "\n";
+          isPaused = true;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

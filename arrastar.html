@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>CONTROL-E - Clique com o Botão Direito do Mouse</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mouse.css">
+	
+	</head>
+  
+<body>
+  <header>
+    <h1>CONTROL-E</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rightclick.html">Anterior</a></li>       
+        <li><a href="scroll.html">Proximo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Arrastar com o Mouse</h2>
+    <div class="content">
+      <div class="image">
+        <img src="arrastar.png" alt="Arrastar" width="80%">
+      </div>
+      <div class="text">
+	  <style>
+  .text {
+    margin-top: 0;
+  }
+</style>
+
+        <p>O clique e arraste do mouse é utilizado para mover objetos na tela do computador. </p>
+		<p>Para isso, basta clicar no objeto com o botão esquerdo do mouse e mantê-lo pressionado enquanto o movimenta com o mouse.</p>
+        <p>Experimente arrastar o objeto abaixo sem sair da moldura maior</p>
+        <div style="width:500px; height: 180px; background-color: #f2f2f2; border: 2px solid #1c1c1c; margin-top: 20px;">
+          <div id="drag" style="width: 100px; height: 20px; background-color: #1c1c1c; color: #ffffff; border-radius: 5px; text-align: center; line-height: 20px; cursor: move;">Arraste-me</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    // Adiciona a funcionalidade de arrastar o objeto com o mouse
+    var dragItem = document.getElementById("drag");
+    var container = document.querySelector("div.content");
+
+    var active = false;
+    var currentX;
+    var currentY;
+    var initialX;
+    var initialY;
+    var xOffset = 0;
+    var yOffset = 0;
+
+    container.addEventListener("mousedown", dragStart);
+    container.addEventListener("mouseup", dragEnd);
+    container.addEventListener("mousemove", drag);
+
+    function dragStart(e) {
+      if (e.target === dragItem) {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+
+        if (e.target === dragItem) {
+          active = true;
+        }
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+
+      active = false;
+    }
+
+    function drag(e) {
+      if (active) {
+        e.preventDefault();
+
+        currentX = e.clientX - initialX;
+        currentY = e.clientY - initialY;
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, dragItem);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }
+  </script>
+</body>
+
+
+</html>

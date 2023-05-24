@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CONTROL-E</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+	<header>
+		<h1>CONTROL-E</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="enter.html">Anterior</a></li>
+				<li><a href="shiftkey.html">Próximo</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="content" style="display: flex; flex-direction: row;">
+			<div class="image" style="width: 50%;">
+				<img src="tab_key.jfif" alt="Teclado com destaque para a tecla TAB">
+				<h2>Principais funções da tecla TAB</h2>
+				<p>A tecla TAB é utilizada para mover o cursor para o próximo campo ou elemento de um formulário ou janela, 
+				ou ainda para inserir um caractere de tabulação numa edição de textos.</p>
+			</div>
+			<div class="form" style="width: 50%;">
+				<h2>Prática</h2>
+				<form style="border: 2px solid #333; padding: 20px;">
+					<label for="firstName">Digite seu primeiro nome:</label>
+					<input type="text" id="firstName" name="firstName" tabindex="1" autofocus><br><br>
+					<label for="lastName">Digite o seu último nome:</label>
+					<input type="text" id="lastName" name="lastName" tabindex="2"><br><br>
+					<button type="submit" id="submitForm" tabindex="3">Enviar Formulário</button>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+	</footer>
+
+	<script>
+		document.addEventListener("keydown", function(event) {
+			if (event.key === "Tab") {
+				// código para o TAB aqui
+			} else if (event.key === "Enter") {
+				if (document.activeElement.type !== "submit") {
+					event.preventDefault();
+					alert("Pressione TAB para avançar para o próximo campo.");
+				} else {
+					// código para enviar o formulário aqui
+				}
+			}
+		});
+	</script>
+</body>
+</html>

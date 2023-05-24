@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CONTROL-E</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>CONTROL-E</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bkp_del.html">Anterior</a></li>  
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="content">
+      <div class="image">
+        <img src="num_lock_key.jpg" alt="Teclado com destaque para a tecla NUM LOCK">
+        <p id="caps-state">NUM LOCK está desligado</p>
+      </div>
+      <div class="form practice">
+        <h2>Prática</h2>
+        <form>
+          <div>
+            <label for="campo1">0 1 2 3 4 5 6 7 8 9</label>
+            <input type="text" id="campo1" name="campo1" required>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="text">
+      <h2>A Tecla NUM LOCK</h2>
+      <p>A função principal da tecla Num Lock é permitir que você utilize o teclado numérico, digitando os números de 0 a 9</p>
+      <p>O LED do Num Lock é um pequeno indicador luminoso localizado no teclado do computador que, </p>
+      <p>quando ligado, indica que Num Lock está ativada, habilitando o teclado numérico.</p>
+      <p>Quando a tecla Num Lock está desativada, o LED fica apagado, indicando que teclado numérico está desabilitado.</p>
+      <p>Com Num Lock desligado, o teclado numérico é igual ao teclado de navegação.</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+  </footer>
+  <script src="validacao-formulario.js"></script>
+  <script>
+    const campo1 = document.getElementById('campo1');
+    campo1.addEventListener('blur', event => {
+      const value = event.target.value;
+      const label = event.target.previousElementSibling.innerHTML;
+      validarCampo(value, label, campo1);
+    });
+    function validarCampo(valor, label, campo) {
+  const regexNumeros = /^[0-9]+$/; // expressão regular que verifica se há apenas números
+  if (!regexNumeros.test(valor)) {
+    campo.value = '';
+    campo.classList.add('invalid');
+    const alert = campo.nextElementSibling;
+    alert.style.display = 'block';
+    alert.innerHTML = 'Conteúdo inválido. O campo deve conter apenas números.';
+    campo.focus();
+  } else {
+    campo.classList.remove('invalid');
+    const alert = campo.nextElementSibling;
+    alert.style.display = 'none';
+  }
+}
+
+
+  </script>
+</body>
+</html>

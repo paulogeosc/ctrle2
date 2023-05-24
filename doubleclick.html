@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CONTROL-E - Clique com o Botão Direito do Mouse</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mouse.css">
+</head>
+<body>
+	<header>
+		<h1>CONTROL-E</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="leftclik.html">Anterior</a></li>
+				<li><a href="rightclick.html">Próximo</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="content">
+			<div class="column">
+				<img src="Double-Click.gif" alt="Duplo-Clique">
+			</div>
+			<div class="column">
+				<h2>Duplo-Clique do Mouse</h2>
+				<p>Um duplo-clique no mouse é feito pressionando o botão esquerdo do mouse duas vezes rapidamente em sequência, com um intervalo muito curto entre as duas pressões.</p>
+				<p>Essa ação é frequentemente usada para abrir arquivos ou pastas, selecionar palavras ou frases em um documento, ou executar outras ações específicas do programa em uso. </p>
+			</div>
+			<div class="column">
+				<div class="pratica">
+					<h3>Prática</h3>
+					<p>Clique duplo para ligar e desligar a lâmpada</p>
+					<img id="lampada-apagada" src="lampoff.png" alt="Lâmpada Apagada" ondblclick="ligarDesligarLampada()">
+					<img id="lampada-acesa" src="lampon.png" alt="Lâmpada Acesa" style="display:none" ondblclick="ligarDesligarLampada()">
+				</div>
+			</div>
+		</div>
+		<script>
+			function ligarDesligarLampada() {
+				var lampadaApagada = document.getElementById("lampada-apagada");
+				var lampadaAcesa = document.getElementById("lampada-acesa");
+				if (lampadaApagada.style.display === "none") {
+					lampadaApagada.style.display = "block";
+					lampadaAcesa.style.display = "none";
+				} else {
+					lampadaApagada.style.display = "none";
+					lampadaAcesa.style.display = "block";
+				}
+			}
+		</script>
+	</main>
+	<footer>
+		<p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+	</footer>
+</body>
+</html>

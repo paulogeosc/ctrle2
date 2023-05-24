@@ -1,0 +1,54 @@
+Segue abaixo o código para a página editando.html com as alterações solicitadas:
+
+```
+<!DOCTYPE html>
+<html>
+ <head>
+	<title>CONTROL-E - Edição</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="edicao.css">
+  </head>
+<body>
+  <header>
+    <h1>CONTROL-E</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="selecionar.html">Anterior</a></li>       
+		<li><a href="teclado.html">Proxima</a></li>       
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Edição</h2>
+    <div class="content">
+      <div class="image">
+        <img src="edicoes.jfif" alt="Edição">
+      </div>
+      <div class="text">
+        <p>A seleção de texto permite executar diversas operações de edição, como:</p>
+		<ul>
+			<li> CTRL +C (Copiar): duplica o trecho de texto selecionado na área de transferência.</li>
+			<li> CTRL +X (Recortar): remove o trecho de texto selecionado para a área de transferência.</li>
+			<li> CTRL +V (Colar): insere o conteúdo da área de transferência no local atual do cursor.</li>
+			<li> DEL ou BACK SPACE: exclui o trecho de texto selecionado.</li>
+			<li> Substitua o texto selecionado por um ESPAÇO ou com o atual conteúdo da área de trasferência</li>
+		</ul>
+        <p>Experimente executar essas operações com o trecho de texto abaixo:</p>
+		<div class="text-box">
+			<textarea class="edit-textbox" name="text" rows="10" cols="100">Lorem ipsum dolor duploclick sit amet, consectetur adipiscing elit. Phasellus ut libero auctor, pulvinar duploclick felis non, gravida felis. Sed selecione esse trecho arrastando o mouse sapien para fermentum sapien eget blandit vulputate. Selecione esse trecho usando shift + seta para a direita Nullam quis lorem estibulum, tristique selecione esse texto usando shift + seta para a esquerda ipsum et, consectetur quam. Donec selecione daqui até o início da linha com Shift + Home nec enim dignissim, iaculis magna selecione daqui até o final da linha com Shift + End vel, gravida mi. Selecione daqui para baixo, 3 linhas, usando shift + seta para baixo Ut venenatis tempor est vel malesuada. Sed nec dolor libero. Ut molestie ultrices nisi, sed ullamcorper magna efficitur vitae. Nullam ut laoreet massa. Pellentesque consectetur eu nulla quis eleifend. Nam auctor mauris purus, a tincidunt nunc pretium sit amet. Selecionar esse trecho até o final da linha com Shift + End. Selecionar esse trecho usando shift + seta para a esquerda. Proin eget sollicitudin ante. Nulla ut purus eu nisi sollicitudin consectetur. Aliquam et tellus augue.</textarea>
+		</div>
+        <p>Dicas:</p>
+        <p>Para selecionar todo o texto na caixa de texto, use as teclas Ctrl + A.</p>
+        <p>Para desfazer uma ação de edição, use as teclas Ctrl + Z.</p>
+          <p>Para refazer uma ação de edição desfeita, use as teclas Ctrl + Y.</p>
+        </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

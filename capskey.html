@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tecla Caps Lock</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>CONTROL-E</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shiftkey.html">Anterior</a></li>
+        <li><a href="esckey.html">Próximo</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+  <div class="content">
+  <div class="image">
+    <img src="caps_key.jfif" alt="Teclado com destaque para a tecla CAPS LOCK">
+    <p id="caps-state">CAPS LOCK está desligado</p>
+  </div>
+  <div class="form practice">
+    <h2>Prática</h2>
+	<p> Digite os valores nos campos do formulário</p>
+    <form>
+      <div>
+        <label for="campo1">a b c d e f g h i</label>
+        <input type="text" id="campo1" name="campo1" required>
+        <div class="alerta"></div>
+      </div>
+      <div>
+        <label for="campo2">A B C D E F G H I</label>
+        <input type="text" id="campo2" name="campo2" required>
+        <div class="alerta"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+<div class="text">
+  <h2>A Tecla CAPS LOCK</h2>
+  <p>A função principal da tecla Caps Lock é permitir que você digite tudo em letras maiúsculas </p>
+  <p>O LED do Caps Lock é um pequeno indicador luminoso localizado no teclado do computador que, </p>
+  <p>quando ligado, indica que Caps Lock está ativada e que tudo o que for digitado ficará em  maiúsculas.</p>
+  <p>Quando a tecla Caps Lock está desativada, o LED fica apagado, indicando que as letras serão digitadas em minúsculas.</p>
+  <p>Com Caps Lock ligado, a tecla SHIFT põe as letras em minúsculo enquanto estiver pressionada.</p>
+</div>
+
+  </main>
+  <footer>
+    <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+  </footer>
+  <script src="validacao-formulario.js"></script>
+  <script>
+    const capsState = document.getElementById('caps-state');
+    document.addEventListener('keydown', event => {
+      if (event.getModifierState('CapsLock')) {
+        capsState.innerText = 'CAPS LOCK está ligado';
+      } else {
+        capsState.innerText = 'CAPS LOCK está desligado';
+      }
+    });
+    const campo1 = document.getElementById('campo1');
+    const campo2 = document.getElementById('campo2');
+    campo1.addEventListener('blur', event => {
+      const value = event.target.value;
+      const label = event.target.previousElementSibling.innerHTML;
+      validarCampo(value, label, campo1);
+    });
+    campo2.addEventListener('blur', event => {
+      const value = event.target.value;
+      const label = event.target.previousElementSibling.innerHTML;
+      validarCampo(value, label, campo2);
+    });
+    function validarCampo(valor, label, campo) {
+      if (valor !== label) {
+        campo.value = '';
+        campo.classList.add('invalid');
+        const alert = campo.nextElementSibling;
+        alert.style.display = 'block';
+        alert.innerHTML = `Conteúdo inválido. O campo deve ter o mesmo valor que o seu label "${label}".`;
+        campo.focus();
+      } else {
+        campo.classList.remove('invalid');
+        const alert = campo.nextElementSibling;
+        alert.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

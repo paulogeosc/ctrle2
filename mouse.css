@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+nav {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.column {
+  padding: 0 20px;
+  flex-basis: 33.33%;
+}
+
+.exercise {
+  border: 4px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.exercise h2 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.exercise-box {
+  border: 2px solid #333;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercise-box p {
+  margin: 0;
+}
+
+button {
+  padding: 10px;
+  background-color: #1c1c1c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.click-text {
+  font-size: 24px;
+  color: #1c1c1c;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.column.image {
+  flex-basis: 20%;
+}
+
+.column.text {
+  flex-basis: 40%;
+  
+}
+
+.column.pratica {
+  flex-basis: 40%;
+}
+nav ul li a {
+  color: white;
+  padding-right: 20px; /* adiciona 20 pixels de espaço à direita de cada opção do menu */
+}

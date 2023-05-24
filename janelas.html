@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Janelas</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+      function abrirPopup() {
+        let popup = window.open("", "Popup", "width=400,height=400");
+        let html = `
+          <html>
+          <body>
+            <h1>Componentes de uma Janela</h1>
+            <ul>
+              <li><strong>Barra de Títulos:</strong> Esta é a barra superior de uma janela. Ela exibe o nome do programa e do documento atual 
+			  (about:blank - Google Chrome). Você também pode usar a barra de título para mover a janela arrastando-a.</li>
+			  <li><strong>Barra de Endereços:</strong>(about:blank) Em janelas dos navegadores de internet, esta é a barra onde são colocados os endereços dos sites
+			  que se quer acessar.</li>
+			  <li><strong>Botões de Controle:</strong> Minimizar, Maximizar / Restaurar e Fechar
+              <li><strong>Área de Trabalho:</strong> Esta é a área principal da janela, onde o conteúdo é exibido. O que aparece aqui depende do programa que você está usando.</li>
+              <li><strong>Borda da Janela:</strong> Estas são as bordas ao redor da janela. Em muitos casos, você pode alterar o tamanho da janela arrastando estas bordas.</li>
+              <li><strong>Barra de Menu:</strong> Esta é a área onde as opções de menu estão localizadas. Clicar em uma opção de menu geralmente revela uma lista de comandos.</li>
+              <li><strong>Barra de Rolagem:</strong> Esta barra permite que você se mova para cima e para baixo ou para os lados na janela, se o conteúdo não couber na área de visualização atual.</li>
+            </ul>
+          </body>
+          </html>
+        `;
+        popup.document.write(html);
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>CONTROL-E</h1>
+        <nav>
+            <ul>
+                <li><a href="mouse.html">Mouse</a></li>
+                <li><a href="teclado.html">Teclado</a></li>
+                <li><a href="edicao.html">Edição</a></li>
+                <li><a href="janelas.html">Janelas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Entendendo as Janelas</h2>
+        <p>A estrutura de uma janela do Windows inclui várias partes que nos permitem interagir com o sistema operacional e os programas. 
+		Cada parte da janela tem uma função específica que nos ajuda a controlar o que está sendo exibido e como o programa responde aos nossos comandos. 
+		Dependendo do aplicativo em uso, alguns componentes podem estar/não estar presentes, mas de modo geral, os componentes padrão de uma 
+		janela windows podem ser vistos clicando no botão abaixo:</p>
+        <button onclick="abrirPopup()">Visualizar Componentes de uma Janela</button>
+    </main>
+    <footer>
+        <p>&copy; 2023 CONTROL-E. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
